@@ -1,0 +1,26 @@
+{
+  "name": "FDS12-Algorithm",
+  "version": "1.0.0",
+  "description": "Morning Activity",
+  "main": "excute 1-3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sub2n/FDS12-Algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sub2n/FDS12-Algorithm/issues"
+  },
+  "homepage": "https://github.com/Sub2n/FDS12-Algorithm#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}
