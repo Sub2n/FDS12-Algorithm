@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 
 // 4. 문자열 내 p와 y의 개수
 // numPY함수는 대문자와 소문자가 섞여있는 문자열 s를 인수로 전달받는다.
