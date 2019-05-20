@@ -13,9 +13,7 @@ function render() {
 
   todos.forEach(function (todo) {
     html += `<li id="${todo.id}">
-  <label><input type="checkbox"`;
-    if (todo.completed) html += ' checked';
-    html += `>${todo.content}</label>
+  <label><input type="checkbox" ${todo.completed ? 'checked' : ''}>${todo.content}</label>
 </li>
 `;
   });
