@@ -55,7 +55,7 @@ console.log(getValues('completed')); // [ false, true, false ]
 
 // 단, todos는 변경되지 않도록 하자.
 function sortBy(key) {
-  return todos.slice().sort(function(a, b) {
+  return todos.slice().sort(function (a, b) {
     return a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0);
   });
 }
