@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable prefer-arrow-callback */
 // 1. html 생성
 // 아래 배열을 사용하여 html을 생성하는 함수를 작성하라.
 const todos = [
@@ -10,7 +12,12 @@ function render() {
   let html = '';
 
   todos.forEach(function (todo) {
-
+    html += `<li id="${todo.id}">
+  <label><input type="checkbox"`;
+    if (todo.completed) html += ' checked';
+    html += `>${todo.content}</label>
+</li>
+`;
   });
 
   return html;
