@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .container {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .container button {
+      border: 1px solid salmon;
+      background-color: pink;
+      width: 5vw;
+      height: 2.3rem;
+      padding: 1px 2px;
+      margin: 0 .5rem;
+    }
+    .inputs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .input-todo {
+      width: 30vw;
+      height: 2rem;
+      padding-left: 1rem;
+    }
+    .todos {
+      width: 37.5vw;
+      padding: 0;
+      margin: 0 auto;
+      text-align: center;
+      list-style: none;
+    }
+    .todos li {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+      height: 2rem;
+      padding: 1px 0;
+      line-height: 1.5rem;
+      align-items: center;
+    }
+    .todos li * {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TO DO</h1>
+    <div class="inputs">
+      <input type="text" class="input-todo" placeholder="Enter todo!">
+      <button class="add">Add</button>
+    </div>
+    <ul class="todos">
+    </ul>
+  </div>
+  
+
+  <script>
+    const $inputTodo = document.querySelector('.input-todo');
+    const $add = document.querySelector('.add');
+    const $todos = document.querySelector('.todos');
+
+    function addTodo(newTodo) {
+      $todos.innerHTML += `<li class="todo"><input type="checkbox" class="check" id="addTodo"><label for="addTodo">${newTodo}</label><button class="delete">Delete</button></li>`;
+    }
+    function deleteTodo(childNode) {
+      // delete
+      $todos.removeChild(childNode);
+    }
+    
+    $add.onclick = function() {
+      addTodo($inputTodo.value);
+      $inputTodo.value = '';
+    }
+
+    $todos.addEventListener('click', function(e) {
+      const target = e.target.parentNode;
+      if (e.target.classList.contains('delete')) deleteTodo(target);
+    });
+
+    $todos.addEventListener('change', function(e) {
+      const target = e.target.parentNode.firstChild.nextSibling;
+      console.log(target);
+      if(e.target.checked) target.
+      style.textDecoration = 'line-through';
+      else target.style.textDecoration = 'none';
+    });
+
+  </script>
+</body>
+</html>
