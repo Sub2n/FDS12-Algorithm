@@ -65,7 +65,7 @@
     const $todos = document.querySelector('.todos');
 
     function addTodo(newTodo) {
-      $todos.innerHTML += `<li class="todo"><input type="checkbox" class="check" id="addTodo"><label for="addTodo">${newTodo}</label><button class="delete">Delete</button></li>`;
+      $todos.innerHTML += `<li class="todo"><label><input type="checkbox" class="check">${newTodo}</label><button class="delete">Delete</button></li>`;
     }
     function deleteTodo(childNode) {
       // delete
@@ -77,19 +77,22 @@
       $inputTodo.value = '';
     }
 
-    $todos.addEventListener('click', function(e) {
+    $todos.addEventListener('click', (e) => {
       const target = e.target.parentNode;
       if (e.target.classList.contains('delete')) deleteTodo(target);
     });
 
-    $todos.addEventListener('change', function(e) {
-      const target = e.target.parentNode.firstChild.nextSibling;
+    $todos.addEventListener('change', (e) => {
+      const target = e.target.parentNode;
       console.log(target);
-      if(e.target.checked) target.
-      style.textDecoration = 'line-through';
-      else target.style.textDecoration = 'none';
+      if (e.target.checked) {
+        target.style.textDecoration = 'line-through';
+        e.target.setAttribute('checked', true);
+      } else {
+        target.style.textDecoration = 'none';
+        e.target.setAttribute('checked', false);
+      }
     });
-
   </script>
 </body>
 </html>
